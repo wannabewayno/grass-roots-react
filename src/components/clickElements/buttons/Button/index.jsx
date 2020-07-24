@@ -32,7 +32,7 @@ export default function Button({
             style={buttonStyle}
             type={type}
             onClick={onClick}
-            disabled={disabled}
+            disabled={disabled?'disabled':''}
         >
             {text?<span style={textStyle}>{text}</span>:null}
             {icon?<img src={getIcon(icon)}></img>:null}
