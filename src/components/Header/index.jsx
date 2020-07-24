@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import LinkContainer from '../LinkContainer/index.jsx';
+import LinkContainer from '../containers/LinkContainer/index.jsx';
 
 function Header({ title, links, position = 'relative', height = '50px'}){
 
