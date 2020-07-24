@@ -1,0 +1,99 @@
+/* Global css that pertains to all buttons */
+
+/* :root {
+    --button-colour: var(--impact-yellow);
+    --button-text: var(--impact-yellow);
+    --hover-colour:	var(--ivory-blue);
+    --button-text:black;
+    --disabled-colour: hsl(72, 0%, 44%);
+}
+
+button, .anchor-btn, .btn {
+    width:fit-content;
+    height:auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin:0.5rem;
+    padding:0.25rem;
+    font-size: 100%;
+    background-color: transparent;
+    color: var(--imperial-blue);
+    border:2px solid var(--imperial-blue);
+    border-radius: 5px;
+    object-position: center;
+}
+
+button > i, .anchor-btn > i, .btn > i {
+    margin-left:0;
+}
+
+button:hover, button:focus, .anchor-btn:hover, .anchor-btn:focus, .arc-btn:hover, .anchor-btn:focus {
+    outline:none;
+    cursor: pointer;
+    background-color: var(--hover-colour);
+}
+
+button:active, .anchor-btn:active {
+    transform: scale(0.95);
+}
+
+.nude-button {
+    padding:0;
+    display: block;
+    width: fit-content;
+    height: auto;
+    background-color: transparent;
+    transition:all 200ms ease-in-out;
+    border: none;
+}
+
+.nude-button:hover, .nude-button:focus, .nude-button:active {
+    background-color: transparent;
+    transform: scale(1.5);
+}
+
+.button-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arc-btn {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+}
+
+.arc-btn:hover {
+    background-color: var(--ivory-blue);
+}
+
+.top-right, .top-left, .bottom-right, .bottom-left {
+    margin:0;
+    position: absolute;
+}
+
+.zero {
+    padding:0;
+    margin:0;
+}
+
+.active {
+    background-color: var(--hover-colour);
+} */
+
+/* --------------- custom button properties ----------------------- */
+
+/* .disabled {
+    background-color: var(--disabled-colour);
+}
+
+.disabled:hover, .disabled:focus, .disabled:hover, .disabled:focus {
+    background-color: var(--disabled-colour);
+}
+
+.disabled:active, .disabled:active {
+    transform: none;
+} */

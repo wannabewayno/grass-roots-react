@@ -1,0 +1,13 @@
+.Header {
+    display:flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+}
+
+.Header > h1 {
+    flex-grow: 1;
+    font-size: 100%;
+}
+
+

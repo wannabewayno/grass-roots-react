@@ -1,0 +1,34 @@
+#envelope-lid {
+    height:auto;
+    width:var(--width);
+    text-align: center;
+    margin: auto;
+    transform-origin: top;
+    transition: all 500ms ease-in-out;
+}
+
+#lid-triangle-body, #lid-triangle-border {
+    margin: -3.5px auto 0  auto;
+    display: block;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: calc(var(--width)/2 - 10px) solid transparent;
+    border-right: calc(var(--width)/2 - 10px) solid transparent;
+    border-top: calc(var(--width)/3) solid var(--envelope-border-colour);
+}
+
+#lid-triangle-body{
+    border-top-color: var(--envelope-colour);
+    margin-top:calc(var(--width)* -1/3 - var(--border-width));
+}
+
+#lid-square {
+    width:var(--width);
+    height:30px;
+    position:relative;
+    background-color: var(--envelope-colour);
+    border:var(--border-width) solid var(--envelope-border-colour);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

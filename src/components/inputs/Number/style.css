@@ -1,0 +1,15 @@
+.Number {
+    width:100%;
+    height:auto
+}
+
+.Number input {
+    width:fit-content;
+    height:auto
+}
+
+.Number label {
+    display: block;
+    font-size: 90%;
+    margin-bottom:2%;
+}
