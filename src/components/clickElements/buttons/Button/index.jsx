@@ -18,6 +18,7 @@ export default function Button({
     type='button',
     style={},
     onClick=() => null,
+    disabled
 })  {
 
     const { normalStyle, hoverStyle, activeStyle } = getSkin(skin,color);
@@ -31,6 +32,7 @@ export default function Button({
             style={buttonStyle}
             type={type}
             onClick={onClick}
+            disabled={disabled}
         >
             {text?<span style={textStyle}>{text}</span>:null}
             {icon?<img src={getIcon(icon)}></img>:null}

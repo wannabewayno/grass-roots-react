@@ -1,3 +1,4 @@
+import Header from './components/Header/index.jsx';
 import Button from './components/clickElements/buttons/Button/index.jsx';
 import CloseButton from './components/clickElements/buttons/CloseButton/index.jsx';
 import SendButton from './components/clickElements/buttons/SendButton/index.jsx';
@@ -10,14 +11,12 @@ import DropDownContainer from './components/containers/DropDownContainer/index.j
 import Footer from './components/containers/Footer/index.jsx';
 import FormContainer from './components/containers/FormContainer/index.jsx';
 import FrostedGlass from './components/containers/FrostedGlass/index.jsx';
-import Header from './components/containers/Header/index.jsx';
 import LinkContainer from './components/containers/LinkContainer/index.jsx';
 import ResultContainer from './components/containers/ResultContainer/index.jsx';
 import ShowOnClick from './components/containers/ShowOnClick/index.jsx';
 import InlineContainer from './components/containers/flex/InlineContainer/index.jsx';
 import Navatron from './components/containers/nav/Navatron/index.jsx';
 import EnvelopeForm from './components/custom/EnvelopeForm/index.jsx';
-import Header from './components/headers/Header/index.jsx';
 import Dropdown from './components/inputs/Dropdown/index.jsx';
 import Number from './components/inputs/Number/index.jsx';
 import SearchBar from './components/inputs/SearchBar/index.jsx';
@@ -26,6 +25,7 @@ import Arctext from './components/typography/Arctext/index.jsx';
 
 
 export {
+Header,
 Button,
 CloseButton,
 SendButton,
@@ -38,14 +38,12 @@ DropDownContainer,
 Footer,
 FormContainer,
 FrostedGlass,
-Header,
 LinkContainer,
 ResultContainer,
 ShowOnClick,
 InlineContainer,
 Navatron,
 EnvelopeForm,
-Header,
 Dropdown,
 Number,
 SearchBar,
