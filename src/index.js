@@ -25,30 +25,30 @@ import Arctext from './components/typography/Arctext/index.jsx';
 
 
 export {
-Header,
-Button,
-CloseButton,
-SendButton,
-SubmitButton,
-Link,
-OnOnSwitch,
-Switch,
-Container,
-DropDownContainer,
-Footer,
-FormContainer,
-FrostedGlass,
-LinkContainer,
-ResultContainer,
-ShowOnClick,
-InlineContainer,
-Navatron,
-EnvelopeForm,
-Dropdown,
-Number,
-SearchBar,
-Employee,
-Arctext
+  Header,
+  Button,
+  CloseButton,
+  SendButton,
+  SubmitButton,
+  Link,
+  OnOnSwitch,
+  Switch,
+  Container,
+  DropDownContainer,
+  Footer,
+  FormContainer,
+  FrostedGlass,
+  LinkContainer,
+  ResultContainer,
+  ShowOnClick,
+  InlineContainer,
+  Navatron,
+  EnvelopeForm,
+  Dropdown,
+  Number,
+  SearchBar,
+  Employee,
+  Arctext
 }
 
 import useComputedStyle from './hooks/useComputedStyle/index.jsx';
@@ -56,8 +56,8 @@ import useLiftState from './hooks/useLiftState/index.jsx';
 
 
 export {
-useComputedStyle,
-useLiftState
+  useComputedStyle,
+  useLiftState
 }
 
 import onActive from './events/onActive/index.jsx';
@@ -65,6 +65,6 @@ import onHover from './events/onHover/index.jsx';
 
 
 export {
-onActive,
-onHover
+  onActive,
+  onHover
 }

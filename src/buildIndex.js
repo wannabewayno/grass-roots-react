@@ -8,7 +8,7 @@ Array.prototype.joinByKey = function(key,selector) {
 }
 
 function createExportStatement(statements){
-    const componentNames = statements.joinByKey('componentName',',\n');
+    const componentNames = statements.joinByKey('componentName',',\n  ');
 
     return `export {\n  ${componentNames}\n}`
 }
