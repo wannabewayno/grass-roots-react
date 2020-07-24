@@ -17,6 +17,7 @@ import ShowOnClick from './components/containers/ShowOnClick/index.jsx';
 import InlineContainer from './components/containers/flex/InlineContainer/index.jsx';
 import Navatron from './components/containers/nav/Navatron/index.jsx';
 import EnvelopeForm from './components/custom/EnvelopeForm/index.jsx';
+import Header from './components/headers/Header/index.jsx';
 import Dropdown from './components/inputs/Dropdown/index.jsx';
 import Number from './components/inputs/Number/index.jsx';
 import SearchBar from './components/inputs/SearchBar/index.jsx';
@@ -44,6 +45,7 @@ ShowOnClick,
 InlineContainer,
 Navatron,
 EnvelopeForm,
+Header,
 Dropdown,
 Number,
 SearchBar,
