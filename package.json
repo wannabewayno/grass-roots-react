@@ -1,0 +1,48 @@
+{
+  "name": "grass-roots-react",
+  "version": "0.3.16",
+  "description": "A state-full react library",
+  "main": "'./dist/index.js'",
+  "scripts": {
+    "prepublish": "npm run build",
+    "prebuild": "node ./src/buildIndex.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wannabewayno/grass-roots-react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "wayne griffiths",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wannabewayno/grass-roots-react/issues"
+  },
+  "homepage": "https://github.com/wannabewayno/grass-roots-react#readme",
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.10.4",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "css-loader": "^3.3.0",
+    "file-loader": "^6.0.0",
+    "url-loader": "^4.1.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "uuid": "^8.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
