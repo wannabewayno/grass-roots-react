@@ -11,13 +11,13 @@ A state-full react library
 `npm install grass-roots-react`
 
 ### Use
-`import { Container, Button } from 'grass-roots-react'
+`import { Container, Button } from 'grass-roots-react'`
 
-function handleClick(){
+`function handleClick(){
   console.log("CLICK")
-}
+}`
 
-<Container>
+`<Container>
   <Button 
     text='press'
     color='rgb(255,125,125)'
@@ -28,7 +28,7 @@ function handleClick(){
     skin='flat'
     onClick={handleClick}
   />
-<Container/>
+<Container/>`
 
 # Introduction
 grass-roots-react is a stateful library. Most components have internal states that allow the component to function independently from a global store or parent container logic. This allows for drag and drop, copy and paste components that will work anywhere in your build. The downside is a little bit of prop drilling, but we have designed our components to minimise this. 
