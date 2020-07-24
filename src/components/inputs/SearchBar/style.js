@@ -36,6 +36,7 @@ export const labelBox = {
 export const labelStyle = {
     fontSize:'90%',
     padding:'0.2rem 0.25rem',
+    whiteSpace:'nowrap',
 }
 
 export const containerStyle = {
