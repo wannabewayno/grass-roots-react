@@ -32,6 +32,8 @@ export default function defaultStyle(colourString) {
     const disabledStyle = {
         cursor:'arrow',
         color:disabledColour,
+        backgroundColor:'transparent',
+        borderColor:disabledColour
     }
 
     return { normalStyle, hoverStyle, activeStyle, disabledStyle }
