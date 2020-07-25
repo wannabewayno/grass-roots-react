@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './style.css';
 import liftUpAll from './liftUpAll.js'
 
 const FormContainer = ({ onSubmit, children }) => {
