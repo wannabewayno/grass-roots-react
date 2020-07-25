@@ -6,7 +6,7 @@ export default function defaultStyle(colourString) {
     const baseColour = colour.toString();
     const disabledColourObject = colour.clone(); 
 
-    disabledColourObject.desaturate(50);
+    disabledColourObject.desaturate(25);
     const disabledColour = disabledColourObject.toString();
 
     const normalStyle = {
@@ -32,8 +32,8 @@ export default function defaultStyle(colourString) {
     const disabledStyle = {
         cursor:'arrow',
         color:disabledColour,
-        backgroundColor:'transparent',
-        borderColor:disabledColour
+        backgroundColor:'rgba(0,0,0,0)',
+        borderColor:disabledColour,
     }
 
     return { normalStyle, hoverStyle, activeStyle, disabledStyle }
