@@ -21,7 +21,7 @@ export default function Button({
     disabled
 })  {
 
-    const { normalStyle, hoverStyle, activeStyle } = getSkin(skin,color);
+    const { normalStyle, hoverStyle, activeStyle, disabledStyle } = getSkin(skin,color);
 
     const buttonStyle = {
         ...baseStyle,
