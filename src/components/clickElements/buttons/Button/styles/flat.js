@@ -1,10 +1,12 @@
 import destructureColour from '../../../../../lib/destructureColour.js';
+import HSL2RGB from '../../../../../lib/HSL2RGB.js';
 
 export default function flatStyle(colourString) {
     
     const colour = destructureColour(colourString);
 
     const baseColour = colour.clone().toString();
+    const disabledColour = colour.clone().desaturate(50).toString();
     const hoverColourObject = colour.clone();
 
     hoverColourObject.darken(5)
@@ -30,8 +32,11 @@ export default function flatStyle(colourString) {
     }
 
     const disabledStyle = {
-
+        cursor:'arrow',
+        transform:'none',
+        backgroundColor:disabledColour,
+        color:'hsl(0,0,50)'
     }
 
-    return { normalStyle, hoverStyle, activeStyle }
+    return { normalStyle, hoverStyle, activeStyle, disabledStyle }
 }

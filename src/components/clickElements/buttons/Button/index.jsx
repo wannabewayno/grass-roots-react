@@ -34,8 +34,8 @@ export default function Button({
 
     return (
         <button
-            {...disabled?'':onHover(hoverStyle)}
-            {...disabled?'':onActive(activeStyle)}
+            {...disabled?{}:onHover(hoverStyle)}
+            {...disabled?{}:onActive(activeStyle)}
             style={buttonStyle}
             type={type}
             onClick={onClick}
