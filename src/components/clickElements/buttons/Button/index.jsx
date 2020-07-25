@@ -23,12 +23,19 @@ export default function Button({
 
     const { normalStyle, hoverStyle, activeStyle } = getSkin(skin,color);
 
-    const buttonStyle = { ...baseStyle, ...buttonSize(size), ...buttonPosition(position), ...normalStyle, ...style };
+    const buttonStyle = {
+        ...baseStyle,
+        ...buttonSize(size),
+        ...buttonPosition(position),
+        ...normalStyle,
+        ...disabled?disabledStyle:{},
+        ...style
+    };
 
     return (
         <button
-            {...onHover(hoverStyle)}
-            {...onActive(activeStyle)}
+            {...disabled?'':onHover(hoverStyle)}
+            {...disabled?'':onActive(activeStyle)}
             style={buttonStyle}
             type={type}
             onClick={onClick}

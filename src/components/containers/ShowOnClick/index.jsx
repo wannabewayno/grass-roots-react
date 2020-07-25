@@ -28,7 +28,7 @@ export default function ShowOnClick({ children, showOnMount, provideButton=true,
             ...showThisOnClick.props, 
             ref:elementToShow
         },
-        //any children
+        showThisOnClick.props.children
     )
 
     const [ isShown, setIsShown ] = useState(showOnMount)

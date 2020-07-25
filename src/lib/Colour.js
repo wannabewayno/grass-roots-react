@@ -61,6 +61,22 @@ export default class Colour {
         this.setChannels({ L });
     }
 
+    saturate(percentage){
+        if(this.type === 'rgb') this.convert('hsl');
+        let [H,S,L] = this.getChannels();
+        S -= percentage;
+        if(S < 0 ) S = 0;
+        this.setChannels({ S });
+    }
+
+    desaturate(percentage){
+        if(this.type === 'rgb') this.convert('hsl');
+        let [H,S,L] = this.getChannels();
+        S += percentage;
+        if(S > 1) S = 1;
+        this.setChannels({ S });
+    }
+
     /**
      * Turns a colour object into a CSSStyle string;
      * @return {String} - css colour string //? rgba(255,40,113,1)
