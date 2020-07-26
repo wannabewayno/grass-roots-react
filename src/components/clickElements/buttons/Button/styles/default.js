@@ -30,7 +30,7 @@ export default function defaultStyle(colourString) {
     }
 
     const disabledStyle = {
-        cursor:'arrow',
+        cursor:'default',
         color:disabledColour,
         backgroundColor:'rgba(0,0,0,0)',
         borderColor:disabledColour,
