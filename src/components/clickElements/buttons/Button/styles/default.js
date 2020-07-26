@@ -6,7 +6,8 @@ export default function defaultStyle(colourString) {
     const baseColour = colour.clone();
     const disabledColour = colour.clone(); 
 
-    disabledColour.desaturate(25); 
+    disabledColour.desaturate(50);
+    disabledColour.setOpacity(0.5);
 
     const normalStyle = {
         margin:'0.5rem',
