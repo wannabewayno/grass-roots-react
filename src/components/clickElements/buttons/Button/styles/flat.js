@@ -1,5 +1,4 @@
-import destructureColour from '../../../../../lib/destructureColour.js';
-import HSL2RGB from '../../../../../lib/HSL2RGB.js';
+import destructureColour from '../../../../../lib/Colour/destructureColour.js';
 
 export default function flatStyle(colourString) {
     

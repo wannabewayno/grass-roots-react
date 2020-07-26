@@ -1,4 +1,4 @@
-import destructureColour from '../../../../../lib/destructureColour.js';
+import destructureColour from '../../../../../lib/Colour/destructureColour.js';
 
 export default function defaultStyle(colourString) {
     
