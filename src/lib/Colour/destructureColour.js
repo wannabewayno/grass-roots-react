@@ -15,9 +15,14 @@ export default function destructureColour(colourString) {
     let channels;
 
     if(colourString.indexOf('#') !== -1){
-        type = 'rgb'
-        const regex = (colourString.length - 1) === 6 ? new RegExp('\w\w','g') : new RegExp('\w','g')
-        channels = (colourString.match(regex)).map(hex => parseInt(hex,16))
+        type = 'hex'
+        switch(colourString.length - 1){
+            case 3: channels = (colourString.match(/\w/g)||[]).map(hex => hex + hex);
+                break;
+            case 6: channels = colourString.match(/\w\w/g)||[]
+                break;
+            default: throw new Error('Not a valid Hex colour')
+        }
     } else {
 
         //use regex to get the digits into an array [ch1,ch2,ch3,alpha]

@@ -15,9 +15,14 @@ function destructureColour(colourString) {
     let channels;
 
     if(colourString.indexOf('#') !== -1){
-        type = 'rgb'
-        const regex = (colourString.length - 1) === 6 ? /'\w\w'/g : /'\w'/g
-        channels = (colourString.match(regex)).map(hex => parseInt(hex,16))
+        type = 'hex'
+        switch(colourString.length - 1){
+            case 3: channels = (colourString.match(/\w/g)||[]).map(hex => hex + hex);
+                break;
+            case 6: channels = colourString.match(/\w\w/g)||[]
+                break;
+            default: throw new Error('Not a valid Hex colour')
+        }
     } else {
 
         //use regex to get the digits into an array [ch1,ch2,ch3,alpha]
@@ -32,10 +37,23 @@ function destructureColour(colourString) {
     return new Colour(type,channels);
 }
 
-console.log(destructureColour('rgb(255,125,125)'))
-console.log(destructureColour('hsl(255,80%,90%)'))
-console.log(destructureColour('#FFF'))
-console.log(destructureColour('#FFFFFF'))
+const colour1 = destructureColour('rgb(255,125,125)');
+const colour2 = destructureColour('hsl(255,80%,90%)');
+const colour3 = destructureColour('#FFF');
+const colour4 = destructureColour('#F1F0FF');
+
+console.log(colour1);
+console.log(colour2);
+console.log(colour3);
+console.log(colour4);
+
+console.log('BEFORE DARKEN:',colour2)
+colour2.darken(20);
+console.log('AFTER DARKEN:',colour2)
+
+console.log('BEFORE desaturate:',colour2)
+colour2.desaturate(20);
+console.log('AFTER desaturate:',colour2)
 
 
 
