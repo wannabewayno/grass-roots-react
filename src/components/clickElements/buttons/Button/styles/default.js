@@ -3,25 +3,24 @@ import destructureColour from '../../../../../lib/destructureColour.js';
 export default function defaultStyle(colourString) {
     
     const colour = destructureColour(colourString);
-    const baseColour = colour.toString();
-    const disabledColourObject = colour.clone(); 
+    const baseColour = colour.clone();
+    const disabledColour = colour.clone(); 
 
-    disabledColourObject.desaturate(25);
-    const disabledColour = disabledColourObject.toString();
+    disabledColour.desaturate(25); 
 
     const normalStyle = {
         margin:'0.5rem',
         padding:'0.5em 0.75em',
-        color:baseColour,
+        color:baseColour.CSS(),
         borderWidth:'0.1em',
         borderStyle:'solid',
-        borderColor:baseColour,
+        borderColor:baseColour.CSS(),
     }
 
     const hoverStyle = {
         cursor:'pointer',
-        color:'#FFF',
-        backgroundColor:baseColour
+        color:baseColour.getContrast(),
+        backgroundColor:baseColour.CSS()
     }
 
     const activeStyle = {
@@ -31,9 +30,9 @@ export default function defaultStyle(colourString) {
 
     const disabledStyle = {
         cursor:'default',
-        color:disabledColour,
+        color:disabledColour.CSS(),
         backgroundColor:'rgba(0,0,0,0)',
-        borderColor:disabledColour,
+        borderColor:disabledColour.CSS(),
     }
 
     return { normalStyle, hoverStyle, activeStyle, disabledStyle }

@@ -5,25 +5,24 @@ export default function flatStyle(colourString) {
     
     const colour = destructureColour(colourString);
 
-    const baseColour = colour.clone().toString();
-    const disabledColour = colour.clone().desaturate(50).toString();
-    const hoverColourObject = colour.clone();
+    const baseColour = colour.clone();
+    const disabledColour = colour.clone();
+    const hoverColour = colour.clone();
 
-    hoverColourObject.darken(5)
-    const hoverColour = hoverColourObject.toString(); 
-    
+    disabledColour.desaturate(25);
+    hoverColour.darken(5);
 
     const normalStyle = {
         border:'none',
         margin: '0.5rem',
         padding: '0.5em 0.75em',
-        color: '#FFF',
-        backgroundColor: baseColour,
+        color: baseColour.getContrast(),
+        backgroundColor: baseColour.CSS(),
     }
 
     const hoverStyle = {
         cursor:'pointer',
-        backgroundColor: hoverColour,
+        backgroundColor: hoverColour.CSS(),
     }
 
     const activeStyle = {
@@ -32,10 +31,10 @@ export default function flatStyle(colourString) {
     }
 
     const disabledStyle = {
-        cursor:'arrow',
+        cursor:'default',
         transform:'none',
-        backgroundColor:disabledColour,
-        color:'hsl(0,0,50)'
+        backgroundColor:disabledColour.CSS(),
+        color:'hsla(0,0%,50%,0.5)'
     }
 
     return { normalStyle, hoverStyle, activeStyle, disabledStyle }

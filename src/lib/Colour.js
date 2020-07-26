@@ -1,5 +1,7 @@
-import HSL2RGB from './HSL2RGB.js';
-import RGB2HSL from './RGB2HSL.js';
+import HSL2RGB from './HSL2RGB';
+import RGB2HSL from './RGB2HSL';
+import RGB2HEX from './RGB2HEX';
+import HEX2RGB from './HEX2RGB';
 
 
 export default class Colour {
@@ -8,10 +10,11 @@ export default class Colour {
         this.channels = channels;
         this.alpha = channels[3]? channels[3]:1
     }
+// ==============================================================================
     //only get, can't set without converting
     getType() { return this.type };
     setType() { console.log("can't set type here, use convert() to change the type")}
-
+// ==============================================================================
     getChannels() { return this.channels };
 
     /**
@@ -36,7 +39,7 @@ export default class Colour {
                 console.error("Can't set Colour channels, type is undefined")
         }
     };
-
+// ==============================================================================
     getOpacity() { return this.alpha * 100 };
 
     /**
@@ -45,8 +48,9 @@ export default class Colour {
      */
     setOpacity(opacity) { this.alpha = opacity/100 }
 
+// ==========================================================================
     darken(percentage){
-        if(this.type === 'rgb') this.convert('hsl');
+        if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         L -= percentage;
         if(L < 0 ) L = 0;
@@ -54,15 +58,15 @@ export default class Colour {
     }
 
     lighten(percentage){
-        if(this.type === 'rgb') this.convert('hsl');
+        if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         L += percentage;
         if(L > 100) L = 100;
         this.setChannels({ L });
     }
-
+// ==========================================================================
     saturate(percentage){
-        if(this.type === 'rgb') this.convert('hsl');
+        if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         S -= percentage;
         if(S < 0 ) S = 0;
@@ -70,18 +74,39 @@ export default class Colour {
     }
 
     desaturate(percentage){
-        if(this.type === 'rgb') this.convert('hsl');
+        if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         S += percentage;
         if(S > 100) S = 100;
         this.setChannels({ S });
     }
+// ==============================================================================
+    getContrast(){
+        const initialColour = this.type;
+        this.convert('rgb');
 
+        // Get YIQ ratio
+        const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+
+        //convert back to initialColour
+        this.convert(initialColour);
+
+        // Check contrast
+        let black;
+        let white;
+        if(this.type === 'rgb') black = 'rgba(0,0,0,1)';   white ='rgba(255,255,255,1)';
+        if(this.type === 'hsl') black = 'hsla(0,0%,0%,1)'; white ='hsla(0,0%,100%,1)';
+        if(this.type === 'hex') black = '#000000';         white ='#FFFFFF';
+
+        return (yiq >= 128) ? black : white;
+
+    };
+// ==============================================================================
     /**
      * Turns a colour object into a CSSStyle string;
      * @return {String} - css colour string //? rgba(255,40,113,1)
      */
-    toString() {
+    CSS() {
         switch(this.type){
             case'rgb':
                 const [R,G,B] = this.channels;
@@ -89,15 +114,17 @@ export default class Colour {
             case'hsl':
                 const [H,S,L] = this.channels;
                 return `hsla(${H},${S}%,${L}%,${this.alpha})`
+            case'hex':
+                return `#${this.channels.join('')}`;
             default: 
                 return console.warn('Error: unpassable colour type');
         }
-
     }
 
     /**
      * Converts a colour from one format to another
-     * @param  {String} convertTo - convert to format? //? rgb|hsl
+     * @param  {String} convertTo - convert to format? //? rgb|hsl|hex
+     *
      */
     convert(convertTo){
 
@@ -108,12 +135,19 @@ export default class Colour {
 
         switch(convertTo){
             case'rgb':
-                this.channels = HSL2RGB(...this.channels);
+                if(this.type === 'hex') this.channels = HEX2RGB(...this.channels);
+                if(this.type === 'hsl') this.channels = HSL2RGB(...this.channels);
                 this.type = 'rgb'
                 break;
             case'hsl':
+                if(this.type === 'hex') this.convert('rgb');
                 this.channels = RGB2HSL(...this.channels);
                 this.type = 'hsl'
+                break;
+            case'hex':
+                if(this.type === 'hsl') this.convert('rgb');
+                this.channels = RGB2HEX(...this.channels)
+                this.type = 'hex'
                 break;
             default:
                 console.warn("convert doesn't recognise this as a colour to convert to")
