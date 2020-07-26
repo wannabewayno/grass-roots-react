@@ -4,6 +4,7 @@
   "description": "A state-full react library",
   "main": "./dist/index.js",
   "scripts": {
+    "test":"jest",
     "prepublish": "npm run build",
     "prebuild": "node ./src/buildIndex.js",
     "build": "webpack"

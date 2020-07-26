@@ -85,8 +85,10 @@ export default class Colour {
         const initialColour = this.type;
         this.convert('rgb');
 
+        const [ R , G , B ] = this.channels;
+        
         // Get YIQ ratio
-        const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+        const yiq = ((R * 299) + (G * 587) + (B * 114)) / 1000;
 
         //convert back to initialColour
         this.convert(initialColour);
