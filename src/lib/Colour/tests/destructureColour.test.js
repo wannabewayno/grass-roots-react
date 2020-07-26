@@ -59,6 +59,19 @@ console.log('BEFORE saturate:',colour2.CSS())
 colour2.saturate(120);
 console.log('AFTER saturate:',colour2.CSS())
 
+console.log('BEFORE saturate:',colour1.CSS())
+colour1.saturate(30);
+console.log('AFTER saturate:',colour1.CSS())
+
+console.log('BEFORE saturate:',colour1.CSS())
+colour1.convert('hex');
+console.log('AFTER saturate:',colour1.CSS())
+
+console.log('BEFORE saturate:',colour4.CSS())
+colour4.convert('hsl');
+console.log('AFTER saturate:',colour4.CSS())
+
+
 
 
 module.exports = destructureColour
