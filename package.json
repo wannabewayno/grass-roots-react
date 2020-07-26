@@ -1,10 +1,10 @@
 {
   "name": "grass-roots-react",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A state-full react library",
   "main": "./dist/index.js",
   "scripts": {
-    "test":"jest",
+    "test": "jest",
     "prepublish": "npm run build",
     "prebuild": "node ./src/buildIndex.js",
     "build": "webpack"
