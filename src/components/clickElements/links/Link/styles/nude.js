@@ -1,9 +1,9 @@
-import destructureColour from '../../../../../lib/destructureColour.js';
+import destructureColour from '../../../../../lib/Colour/destructureColour.js';
 
 export default function nudeStyle(colourString) {
 
     const colour = destructureColour(colourString);
-    const baseColour = colour.toString();
+    const baseColour = colour.CSS()
 
     const normalStyle = {
         color:baseColour,

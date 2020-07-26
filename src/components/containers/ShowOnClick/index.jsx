@@ -1,7 +1,7 @@
 import React, { useState, useEffect, cloneElement, useRef } from 'react';
 import Button from '../../clickElements/buttons/Button/index.jsx'
 import useComputedStyle from '../../../hooks/useComputedStyle/index.jsx'
-import destructureUnit from '../../../lib/destructureUnit'
+import destructureUnit from '../../../lib/Unit/destructureUnit'
 
 export default function ShowOnClick({ children, showOnMount, provideButton=true, liftUpState, transitionTime="500ms" }) {
 

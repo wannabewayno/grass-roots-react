@@ -1,5 +1,5 @@
 import useComputedStyle from '../../../hooks/useComputedStyle/index.jsx'
-import destrucutreUnit from '../../../lib/destructureUnit.js'
+import destrucutreUnit from '../../../lib/Unit/destructureUnit.js'
 
 export function toRad(degrees) {
     return degrees*Math.PI/180;

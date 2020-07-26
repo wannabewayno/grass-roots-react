@@ -1,4 +1,4 @@
-import extendMath from './mathExtension';
+import extendMath from '../mathExtension';
 //make math extensions available in this scope
 extendMath();
 
