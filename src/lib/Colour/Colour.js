@@ -68,7 +68,7 @@ export default class Colour {
     saturate(percentage){
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
-        S -= percentage;
+        S += percentage;
         if(S < 0 ) S = 0;
         this.setChannels({ S });
     }
@@ -76,7 +76,7 @@ export default class Colour {
     desaturate(percentage){
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
-        S += percentage;
+        S -= percentage;
         if(S > 100) S = 100;
         this.setChannels({ S });
     }
@@ -86,7 +86,7 @@ export default class Colour {
         this.convert('rgb');
 
         const [ R , G , B ] = this.channels;
-        
+
         // Get YIQ ratio
         const yiq = ((R * 299) + (G * 587) + (B * 114)) / 1000;
 

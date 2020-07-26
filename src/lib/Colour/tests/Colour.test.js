@@ -67,7 +67,7 @@ module.exports = class Colour {
     saturate(percentage){
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
-        S -= percentage;
+        S += percentage;
         if(S < 0 ) S = 0;
         this.setChannels({ S });
     }
@@ -75,7 +75,7 @@ module.exports = class Colour {
     desaturate(percentage){
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
-        S += percentage;
+        S -= percentage;
         if(S > 100) S = 100;
         this.setChannels({ S });
     }

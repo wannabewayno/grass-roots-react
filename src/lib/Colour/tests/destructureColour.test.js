@@ -52,7 +52,7 @@ colour2.darken(20);
 console.log('AFTER DARKEN:',colour2)
 
 console.log('BEFORE desaturate:',colour2)
-colour2.desaturate(20);
+colour2.desaturate(10);
 console.log('AFTER desaturate:',colour2)
 
 
