@@ -11,7 +11,7 @@ const pageStyle = {
  * Pass in a map of router location to desired background image and let this do the rest
  * @param {Object} backgroundImageMap - An object whose key:value pairs => location:image 
  */
-export default function useBackgroundImageRouter(backgroundImageMap) {
+export default backgroundImageMap => {
 
     const [ location ] = useState(window.location.pathname);
     const [ imageMap ] = useState(backgroundImageMap);
