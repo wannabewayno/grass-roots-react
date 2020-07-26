@@ -42,18 +42,22 @@ const colour2 = destructureColour('hsl(255,80%,90%)');
 const colour3 = destructureColour('#FFF');
 const colour4 = destructureColour('#F1F0FF');
 
-console.log(colour1);
-console.log(colour2);
-console.log(colour3);
-console.log(colour4);
+console.log(colour1.CSS());
+console.log(colour2.CSS());
+console.log(colour3.CSS());
+console.log(colour4.CSS());
 
-console.log('BEFORE DARKEN:',colour2)
+console.log('BEFORE DARKEN:',colour2.CSS())
 colour2.darken(20);
-console.log('AFTER DARKEN:',colour2)
+console.log('AFTER DARKEN:',colour2.CSS())
 
-console.log('BEFORE desaturate:',colour2)
-colour2.desaturate(10);
-console.log('AFTER desaturate:',colour2)
+console.log('BEFORE desaturate:',colour2.CSS())
+colour2.desaturate(110);
+console.log('AFTER desaturate:',colour2.CSS())
+
+console.log('BEFORE saturate:',colour2.CSS())
+colour2.saturate(120);
+console.log('AFTER saturate:',colour2.CSS())
 
 
 

@@ -24,15 +24,15 @@ module.exports = class Colour {
         switch(this.type){
             case'rgb':
                 const { r,R, g,G, b,B } = channels;
-                if(R|r) this.channels[0] = R?R:r;
-                if(G|g) this.channels[1] = G?G:g;
-                if(B|b) this.channels[2] = B?B:b;
+                if(R!==undefined|r!==undefined) this.channels[0] = R!==undefined?R:r;
+                if(G!==undefined|g!==undefined) this.channels[1] = G!==undefined?G:g;
+                if(B!==undefined|b!==undefined) this.channels[2] = B!==undefined?B:b;
                 break;
             case'hsl':
                 const { h,H, s,S, l,L } = channels;
-                if(H|h) this.channels[0] = H?H:h;
-                if(S|s) this.channels[1] = S?S:s;
-                if(L|l) this.channels[2] = L?L:l;
+                if(H!==undefined|h!==undefined) this.channels[0] = H!==undefined?H:h;
+                if(S!==undefined|s!==undefined) this.channels[1] = S!==undefined?S:s;
+                if(L!==undefined|l!==undefined) this.channels[2] = L!==undefined?L:l;
                 break;
             default: 
                 console.error("Can't set Colour channels, type is undefined")
@@ -49,35 +49,43 @@ module.exports = class Colour {
 
 // ==========================================================================
     darken(percentage){
+        const initialColour = this.type;
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         L -= percentage;
         if(L < 0 ) L = 0;
         this.setChannels({ L });
+        this.convert(initialColour);
     }
 
     lighten(percentage){
+        const initialColour = this.type;
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         L += percentage;
         if(L > 100) L = 100;
         this.setChannels({ L });
+        this.convert(initialColour);
     }
 // ==========================================================================
     saturate(percentage){
+        const initialColour = this.type;
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         S += percentage;
-        if(S < 0 ) S = 0;
+        if(S > 100 ) S = 100;
         this.setChannels({ S });
+        this.convert(initialColour);
     }
 
     desaturate(percentage){
+        const initialColour = this.type;
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         S -= percentage;
-        if(S > 100) S = 100;
+        if(S < 0) S = 0;
         this.setChannels({ S });
+        this.convert(initialColour);
     }
 // ==============================================================================
     getContrast(){

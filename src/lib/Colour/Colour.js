@@ -69,7 +69,7 @@ export default class Colour {
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         S += percentage;
-        if(S < 0 ) S = 0;
+        if(S > 100 ) S = 100;
         this.setChannels({ S });
     }
 
@@ -77,7 +77,7 @@ export default class Colour {
         if(this.type !== 'hsl') this.convert('hsl');
         let [H,S,L] = this.getChannels();
         S -= percentage;
-        if(S > 100) S = 100;
+        if(S < 0) S = 0;
         this.setChannels({ S });
     }
 // ==============================================================================
