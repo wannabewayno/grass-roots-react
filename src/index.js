@@ -51,11 +51,13 @@ export {
   Arctext
 }
 
+import useBackgroundImageRouter from './hooks/useBackgroundImageRouter/index.jsx';
 import useComputedStyle from './hooks/useComputedStyle/index.jsx';
 import useLiftState from './hooks/useLiftState/index.jsx';
 
 
 export {
+  useBackgroundImageRouter,
   useComputedStyle,
   useLiftState
 }
