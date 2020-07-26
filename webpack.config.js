@@ -39,7 +39,17 @@ module.exports = {
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
-                use: ["file-loader"],
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options:{
+                            fallback: "file-loader",
+                            name: "[name][md5:hash].[ext]",
+                            outputPath: 'assets/',
+                            publicPath: '/assets/'
+                        }
+                    }
+                ],
             },
             {
                 test: /\.(pdf|doc|zip)$/,

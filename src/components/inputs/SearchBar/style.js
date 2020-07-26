@@ -6,7 +6,7 @@ export const flex = {
 
 const size = {
     position:'relative',
-    height:'20px',
+    height:'25px',
     padding:'0.1rem 0.5rem',
     borderStyle:'solid',
     borderWidth:'1px',
