@@ -21,7 +21,7 @@ export default function SearchBar({
     const colour        = destructureColour(color)        // default colour
     const labelColour   = labelColor? labelColor : colour.getContrast()  // user colour or contrasting colour
     const inputBGColour = inputBGColor? inputBGColor: undefined // user defined or default
-    const inputColour   = inputColor? inputColor: destructureColour(inputBGColour).getContrast(); // user defined or contrast to background colour
+    const inputColour   = inputColor? inputColor: inputBGColour?destructureColour(inputBGColour).getContrast():undefined // user defined or contrast to background colour
     
     if (!handleliftup){
         handleliftup = () => console.warn(
