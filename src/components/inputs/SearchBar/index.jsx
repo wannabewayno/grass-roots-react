@@ -18,14 +18,17 @@ export default function SearchBar({
 }) {
 
     // we need to parse all the colours the user might set
-    const colour        = destructureColour(color)        // default colour
-    const labelColour   = labelColor? labelColor : colour.getContrast()  // user colour or contrasting colour
+    const colour        = destructureColour(color) // base colour
+
+    const colourClone   = colour.clone()
+    const labelColour   = labelColor? labelColor : colourClone.getContrast()  // user colour or contrasting colour
+    
     const inputBGColour = inputBGColor? inputBGColor: undefined // user defined or default
-    const inputColour   = inputColor? inputColor: inputBGColour?destructureColour(inputBGColour).getContrast():undefined // user defined or contrast to background colour
+    const inputColour   = inputColor? inputColor: inputBGColour? destructureColour(inputBGColour).getContrast():undefined // user defined or contrast to background colour
     
     //everything that uses colour will now be turned to CSS
     colour.CSS()
-    
+
     if (!handleliftup){
         handleliftup = () => console.warn(
             "SearchBar is not sharing it's state with the container!",
