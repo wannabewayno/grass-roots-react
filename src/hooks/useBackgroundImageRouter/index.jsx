@@ -19,7 +19,8 @@ export default backgroundImageMap => {
 
     // Changes the body css everytime the router switches pages
     useEffect(() => {
-         document.body.style.backgroundImage = `url(${imageMap[location]})`
+        document.body.style.backgroundImage = `url(${imageMap[location].image})`
+        if(imageMap[location].position) document.body.style.backgroundPosition = imageMap[location].position;
     },[location])
 
     useEffect(() => {
