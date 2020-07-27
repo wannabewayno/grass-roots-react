@@ -1,6 +1,6 @@
 {
   "name": "grass-roots-react",
-  "version": "0.4.12",
+  "version": "0.4.13",
   "description": "A state-full react library",
   "main": "./dist/index.js",
   "scripts": {
