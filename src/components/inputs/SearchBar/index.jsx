@@ -23,6 +23,9 @@ export default function SearchBar({
     const inputBGColour = inputBGColor? inputBGColor: undefined // user defined or default
     const inputColour   = inputColor? inputColor: inputBGColour?destructureColour(inputBGColour).getContrast():undefined // user defined or contrast to background colour
     
+    //everything that uses colour will now be turned to CSS
+    colour.CSS()
+    
     if (!handleliftup){
         handleliftup = () => console.warn(
             "SearchBar is not sharing it's state with the container!",
