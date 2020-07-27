@@ -19,15 +19,17 @@ export default function SearchBar({
 
     // we need to parse all the colours the user might set
     const colour        = destructureColour(color) // base colour
+    console.log(colour);
 
     const colourClone   = colour.clone()
     const labelColour   = labelColor? labelColor : colourClone.getContrast()  // user colour or contrasting colour
-    
+
     const inputBGColour = inputBGColor? inputBGColor: undefined // user defined or default
     const inputColour   = inputColor? inputColor: inputBGColour? destructureColour(inputBGColour).getContrast():undefined // user defined or contrast to background colour
     
     //everything that uses colour will now be turned to CSS
     colour.CSS()
+    console.log(colour);
 
     if (!handleliftup){
         handleliftup = () => console.warn(
