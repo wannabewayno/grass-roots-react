@@ -53,9 +53,9 @@ export default function SearchBar({
                 value={searchValue}
                 placeholder={placeholder}
                 onChange={event => handleSearchInput(event)}
-                style={{ borderColor:color,...inputStyle, backgroundColor:inputBGColor, color:inputColor, ...input}}
+                style={{ borderColor:colour,...inputStyle, backgroundColor:inputBGColour, color:inputColour, ...input}}
             />
-            <div style={{...labelBox, backgroundColor:color, borderColor:backgroundColor }}>
+            <div style={{...labelBox, backgroundColor:colour, borderColor:colour }}>
                 {name.toDisplay?<label style={{...labelStyle, color:labelColour,...label}}>{name.display}</label>:null}
                 {icon?<img src={magnifyingGlass} alt="search-icon" style={imgStyle}/>:null}
             </div>
