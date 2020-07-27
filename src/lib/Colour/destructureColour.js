@@ -7,8 +7,8 @@ import Colour from './Colour.js'
 export default function destructureColour(colourString) {
 
     //gaurd clause for empty strings
-    if(colourString === ''){
-        return
+    if(colourString === ''|| colourString === undefined){
+        return undefined
     }
 
     let type;
