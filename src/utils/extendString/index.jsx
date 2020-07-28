@@ -1,5 +1,5 @@
-import Capitalization from './Capitalization/Capitalization.js';
+import capitalization from './Capitalization/capitalization.js';
 
 export default  () => {
-    return String.prototype.Capitalization = Capitalization;
+    return String.prototype.capitalization = capitalization;
 }
