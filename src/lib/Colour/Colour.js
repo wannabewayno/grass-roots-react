@@ -28,13 +28,13 @@ export default class Colour {
                 if(R!==undefined|r!==undefined) this.channels[0] = R!==undefined?R:r;
                 if(G!==undefined|g!==undefined) this.channels[1] = G!==undefined?G:g;
                 if(B!==undefined|b!==undefined) this.channels[2] = B!==undefined?B:b;
-                break;
+                return this
             case'hsl':
                 const { h,H, s,S, l,L } = channels;
                 if(H!==undefined|h!==undefined) this.channels[0] = H!==undefined?H:h;
                 if(S!==undefined|s!==undefined) this.channels[1] = S!==undefined?S:s;
                 if(L!==undefined|l!==undefined) this.channels[2] = L!==undefined?L:l;
-                break;
+                return this
             default: 
                 console.error("Can't set Colour channels, type is undefined")
         }
@@ -46,7 +46,10 @@ export default class Colour {
      * Set the opacity from transparent (0) to opaque (100);
      * @param {Number} opacity - a number from 0 - 100 
      */
-    setOpacity(opacity) { this.alpha = opacity/100 }
+    setOpacity(opacity) { 
+        this.alpha = opacity/100
+        return this
+    }
 
 // ==========================================================================
     darken(percentage){
@@ -55,6 +58,7 @@ export default class Colour {
         L -= percentage;
         if(L < 0 ) L = 0;
         this.setChannels({ L });
+        return this
     }
 
     lighten(percentage){
@@ -63,6 +67,7 @@ export default class Colour {
         L += percentage;
         if(L > 100) L = 100;
         this.setChannels({ L });
+        return this
     }
 // ==========================================================================
     saturate(percentage){
@@ -71,6 +76,7 @@ export default class Colour {
         S += percentage;
         if(S > 100 ) S = 100;
         this.setChannels({ S });
+        return this
     }
 
     desaturate(percentage){
@@ -79,6 +85,7 @@ export default class Colour {
         S -= percentage;
         if(S < 0) S = 0;
         this.setChannels({ S });
+        return this
     }
 // ==============================================================================
     getContrast(){
@@ -140,17 +147,17 @@ export default class Colour {
                 if(this.type === 'hex') this.channels = HEX2RGB(...this.channels);
                 if(this.type === 'hsl') this.channels = HSL2RGB(...this.channels);
                 this.type = 'rgb'
-                break;
+                return this
             case'hsl':
                 if(this.type === 'hex') this.convert('rgb');
                 this.channels = RGB2HSL(...this.channels);
                 this.type = 'hsl'
-                break;
+                return this
             case'hex':
                 if(this.type === 'hsl') this.convert('rgb');
                 this.channels = RGB2HEX(...this.channels)
                 this.type = 'hex'
-                break;
+                return this
             default:
                 console.warn("convert doesn't recognise this as a colour to convert to")
         }

@@ -52,12 +52,14 @@ export {
 }
 
 import useBackgroundImageRouter from './hooks/useBackgroundImageRouter/index.jsx';
+import useColor from './hooks/useColor/index.jsx';
 import useComputedStyle from './hooks/useComputedStyle/index.jsx';
 import useLiftState from './hooks/useLiftState/index.jsx';
 
 
 export {
   useBackgroundImageRouter,
+  useColor,
   useComputedStyle,
   useLiftState
 }
