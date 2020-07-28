@@ -71,11 +71,11 @@ export {
   onHover
 }
 
-import Capitalization from './utils/Capitalization/index.jsx';
 import Color from './utils/Color/index.jsx';
+import ExtendString from './utils/ExtendString/index.jsx';
 
 
 export {
-  Capitalization,
-  Color
+  Color,
+  ExtendString
 }
