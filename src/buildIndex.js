@@ -52,6 +52,7 @@ fs.writeFileSync(
     './src/index.js',
     createWriteData('./src/components') +'\n\n' +
     createWriteData('./src/hooks') + '\n\n' +
-    createWriteData('./src/events'),
+    createWriteData('./src/events') + '\n\n' +
+    createWriteData('./src/utils'),
     'utf8'
 );
