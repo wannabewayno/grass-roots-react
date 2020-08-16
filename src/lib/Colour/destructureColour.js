@@ -14,6 +14,11 @@ export default function destructureColour(colourString) {
     let type;
     let channels;
 
+    //special case for transparent
+    if(colourString === 'transparent'){
+        return new Colour('rgb', [0,0,0,0]); 
+    }
+
     if(colourString.indexOf('#') !== -1){
         type = 'hex'
         switch(colourString.length - 1){

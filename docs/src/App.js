@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './Header';
+import Docs from './pages/Docs';
+import Contributing from './pages/Contributing';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+          <Header
+            text='Grass Roots React'
+            color='cyan'
+          />
+          <Switch>
+            <Route exact path={['/','/docs']}>
+              <Docs/>
+            </Route>
+            <Route exact path='/contributing'>
+              <Contributing/>
+            </Route>
+            <Route exact path='/about'>
+              <About/>
+            </Route>
+            <Route>
+              <NotFound/>
+            </Route>
+          </Switch>
+    </Router>
   );
 }
 
