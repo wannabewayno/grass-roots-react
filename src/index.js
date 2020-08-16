@@ -72,10 +72,12 @@ export {
 }
 
 import Color from './utils/Color/index.jsx';
+import ExtendArray from './utils/ExtendArray/index.jsx';
 import ExtendString from './utils/ExtendString/index.jsx';
 
 
 export {
   Color,
+  ExtendArray,
   ExtendString
 }
