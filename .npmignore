@@ -6,6 +6,7 @@ webpack.config.js
 package-lock.json
 .gitignore
 .eslintrc
+docs
 webpack.local.config.js
 webpack.production.config.js
 
