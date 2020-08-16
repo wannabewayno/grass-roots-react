@@ -61,7 +61,7 @@ export default function SearchBar({
             />
             <div style={{...labelBox, backgroundColor:colour.CSS(), borderColor:colour.CSS() }}>
                 {name.toDisplay?<label style={{...labelStyle, color:labelColour,...label}}>{name.display}</label>:null}
-                {icon?<img src={magnifyingGlass} alt="search-icon" style={imgStyle}/>:null}
+                {icon ? <img src={magnifyingGlass} alt="search-icon" style={imgStyle}/> : null}
             </div>
         </div>
     );
