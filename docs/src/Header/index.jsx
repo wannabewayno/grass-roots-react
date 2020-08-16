@@ -16,7 +16,7 @@ export default function Header({
     console.log('params:',params);
     const location = useLocation();
     console.log('location:',location);
-
+    console.log('Colour:', color);
     if(!textColor) textColor = new Color(color);
 
     const headerCSS = { ...headerStyle, color:textColor, height, backgroundColor:color, position,...style }
