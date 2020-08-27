@@ -1,4 +1,4 @@
-export default CSSColourTable = {
+export default {
   lightsalmon: {
     hex: "#FFA07A",
     rgb: "rgb(255,160,122)",
