@@ -1,20 +1,20 @@
 import Colour from './Colour.js';
-import CSSColourTable from './CSSColourTable';
+import CSSColourTable from './CSSColourTable.js';
 
 /**
- * @param  {String} - A CSS colorString //? Example rgba(112,76,132,1);
+ * @param  {String} - A CSS colorString //? Example: 'salmon'|'rgb(250,128,114)'|'#FA8072'|'hsl(6, 93%, 71%)'
  * @return {Colour} - a new Colour instance 
  */
 export default function destructureColour(colourString) {
 
-    //gaurd clause for empty strings
+    //guard clause for empty strings
     if(colourString === ''|| colourString === undefined) return undefined;
 
     //special case for transparent
     if(colourString === 'transparent') return new Colour('rgb', [0,0,0,0]);
 
     // check if this is a recognised CSS colour code
-    if(CSSColourTable[colourString]) colourString = CSSColourTable[colourString].rgb;
+    if(CSSColourTable[colourString.toLowerCase()]) colourString = CSSColourTable[colourString.toLowerCase()].rgb;
 
     let type;
     let channels;
