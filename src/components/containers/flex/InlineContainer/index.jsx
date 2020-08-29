@@ -1,5 +1,6 @@
 import React from 'react';
 import inlineStyle from './style.js';
+import useWindowSize from '../../../../hooks/useWindowSize';
 
 
 /**
@@ -16,11 +17,11 @@ const InlineContainer = ({ children, gap='0px', minWidth='0px', proportions =[],
     const length = children.length;
     const proportional = proportions.join('% ');
     const even = `repeat(auto-fill, minmax( min(max(${minWidth}, calc(${100/length}% - ${gap})),100%), 1fr))`
-    
+    const { width } = useWindowSize();
 
     const css = {
         ...inlineStyle,
-        gridTemplateColumns: proportions.length === children.length? proportional:even,
+        gridTemplateColumns: (proportions.length === length && width > minWidth)? proportional:even,
         gap: gap,
         ...style,
     }
