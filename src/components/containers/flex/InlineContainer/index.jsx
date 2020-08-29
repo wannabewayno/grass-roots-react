@@ -15,7 +15,11 @@ import useWindowSize from '../../../../hooks/useWindowSize/index.jsx';
 const InlineContainer = ({ children, gap='0px', minWidth='0px', proportions =[], style }) => {
 
     const length = children.length;
-    const proportional = proportions.join('% ');
+    const gapValue = Number(gap.match(/\d+/g)[0])
+    const proportional = proportions.map(proportion => {
+        return `${proportion}`+'fr '
+    }).join('');
+    console.log(proportional);
     const even = `repeat(auto-fill, minmax( min(max(${minWidth}, calc(${100/length}% - ${gap})),100%), 1fr))`
     const { width } = useWindowSize();
 
