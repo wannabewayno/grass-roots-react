@@ -21,7 +21,7 @@ const InlineContainer = ({ children, gap='0px', minWidth='0px', proportions =[],
 
     const css = {
         ...inlineStyle,
-        gridTemplateColumns: (proportions.length === length && width > minWidth)? proportional:even,
+        gridTemplateColumns: (proportions.length === length && width > Number(minWidth.replace('px','')))? proportional:even,
         gap: gap,
         ...style,
     }
