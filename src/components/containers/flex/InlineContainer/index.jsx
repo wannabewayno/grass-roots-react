@@ -19,7 +19,6 @@ const InlineContainer = ({ children, gap='0px', minWidth='0px', proportions =[],
     const proportional = proportions.map(proportion => {
         return `${proportion}`+'fr '
     }).join('');
-    console.log(proportional);
     const even = `repeat(auto-fill, minmax( min(max(${minWidth}, calc(${100/length}% - ${gap})),100%), 1fr))`
     const { width } = useWindowSize();
 
