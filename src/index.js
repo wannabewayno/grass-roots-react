@@ -19,7 +19,9 @@ import Navatron from './components/containers/nav/Navatron/index.jsx';
 import EnvelopeForm from './components/custom/EnvelopeForm/index.jsx';
 import Dropdown from './components/inputs/Dropdown/index.jsx';
 import Number from './components/inputs/Number/index.jsx';
+import Password from './components/inputs/Password/index.jsx';
 import SearchBar from './components/inputs/SearchBar/index.jsx';
+import Username from './components/inputs/Username/index.jsx';
 import Employee from './components/listElements/Employee/index.jsx';
 import Arctext from './components/typography/Arctext/index.jsx';
 
@@ -46,7 +48,9 @@ export {
   EnvelopeForm,
   Dropdown,
   Number,
+  Password,
   SearchBar,
+  Username,
   Employee,
   Arctext
 }
