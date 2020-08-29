@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import liftUpAll from './liftUpAll.js'
 
-const FormContainer = ({ onSubmit, children }) => {
+const FormContainer = ({ onSubmit, children, style }) => {
 
     const [ formState, setFormState ] = useState({});
 
@@ -21,7 +21,7 @@ const FormContainer = ({ onSubmit, children }) => {
     }
 
     return (
-        <form style={{padding:'1.5rem'}} onSubmit={handleFormSubmit}>
+        <form style={{padding:'1.5rem', ...style}} onSubmit={handleFormSubmit}>
             {liftUpAll(children,handleliftup)}
         </form>
     )
