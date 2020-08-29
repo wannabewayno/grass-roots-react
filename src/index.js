@@ -58,12 +58,14 @@ export {
 import useBackgroundImageRouter from './hooks/useBackgroundImageRouter/index.jsx';
 import useComputedStyle from './hooks/useComputedStyle/index.jsx';
 import useLiftState from './hooks/useLiftState/index.jsx';
+import useWindowSize from './hooks/useWindowSize/index.jsx';
 
 
 export {
   useBackgroundImageRouter,
   useComputedStyle,
-  useLiftState
+  useLiftState,
+  useWindowSize
 }
 
 import onActive from './events/onActive/index.jsx';

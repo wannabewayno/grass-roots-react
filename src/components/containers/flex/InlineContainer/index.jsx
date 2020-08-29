@@ -1,6 +1,6 @@
 import React from 'react';
 import inlineStyle from './style.js';
-import useWindowSize from '../../../../hooks/useWindowSize';
+import useWindowSize from '../../../../hooks/useWindowSize.js';
 
 
 /**
