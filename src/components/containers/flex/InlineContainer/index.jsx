@@ -11,13 +11,16 @@ import inlineStyle from './style.js';
  * @param {String}  [props.gap='0px']       - Horizontal gap between elements
  * @param {String}  [props.minWidth='0px']  - Breakpoint Width to convert to vertical list  
  */
-const InlineContainer = ({ children, gap='0px', minWidth='0px', style }) => {
+const InlineContainer = ({ children, gap='0px', minWidth='0px', proportions =[], style }) => {
 
     const length = children.length;
+    const proportional = proportions.join('% ');
+    const even = `repeat(auto-fill, minmax( min(max(${minWidth}, calc(${100/length}% - ${gap})),100%), 1fr))`
+    
 
     const css = {
         ...inlineStyle,
-        gridTemplateColumns: `repeat(auto-fill, minmax( min(max(${minWidth}, calc(${100/length}% - ${gap})),100%), 1fr))`,
+        gridTemplateColumns: proportions.length === children.length? proportional:even,
         gap: gap,
         ...style,
     }
